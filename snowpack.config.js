@@ -1,6 +1,9 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
+  exclude: [ '**/.*.swp' ],
   mount: {
+    public: "/",
+    src: "/dist"
     /* ... */
   },
   plugins: [

@@ -1,19 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { useOvermindState, useOvermindActions } from './overmind';
 
+export const App = () => {
 
-export default function() {
-
-  const [count, setCount] = useState(0);
+  const state = useOvermindState();
+  const actions = useOvermindActions();
 
   const buttonClicked = function() {
-    setCount(count+1);
-    console.log('The button was clicked ', count, ' times');
+    actions.incrementCount();
+    console.log('The button was clicked ', state.count, ' times');
   }
 
   return <div>
     <h1>Hello, I am the app</h1>
     <div>
-      The count is {count} <br/>
+      The count is {state.count} <br/>
       <button id="thebutton" onClick={buttonClicked}>I am the button</button>
     </div>
   </div>;

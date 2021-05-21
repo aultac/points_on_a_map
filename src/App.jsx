@@ -1,5 +1,7 @@
 import React from 'react';
 import { useOvermindState, useOvermindActions } from './overmind';
+import { OATSMap } from './OATSMap';
+import L from 'leaflet'
 
 export const App = () => {
 
@@ -17,5 +19,8 @@ export const App = () => {
       The count is {state.count} <br/>
       <button id="thebutton" onClick={buttonClicked}>I am the button</button>
     </div>
+
+    <OATSMap />    
+
   </div>;
 }

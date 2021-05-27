@@ -5,7 +5,7 @@ export const OATSMap = () => {
 
   const state = useOvermindState();
 
-  const polyline = state.points;
+  const polyline = state.pointsArray;
 
   return <div style={{width: '500px', height: '500px' }}>
 

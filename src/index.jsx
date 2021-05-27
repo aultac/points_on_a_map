@@ -6,9 +6,9 @@ import { Provider } from 'overmind-react';
 import { config } from './overmind';
 import { App } from './App.jsx';
 
-const overmind = createOvermind(config); /*, {
+const overmind = createOvermind(config, {
   devtools: 'localhost:3031'
-});*/
+});
 
 
 ReactDOM.render(

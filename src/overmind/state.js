@@ -5,6 +5,9 @@ import { derived } from 'overmind'
 export const state = {
   count: 0,
 
+  domain: 'oats1.ecn.purdue.edu',
+  token: 'insert token here',
+
   // Here is our main points source data: an object with lat, lon,
   // and an "order" to tell us what order they go in
   points: {

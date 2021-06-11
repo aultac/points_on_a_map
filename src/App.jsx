@@ -10,6 +10,7 @@ export const App = () => {
 
   const buttonClicked = function() {
     actions.incrementCount();
+    actions.loadOADAData();
     console.log('The button was clicked ', state.count, ' times');
   }
 

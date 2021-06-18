@@ -8,6 +8,9 @@ export const state = {
   domain: 'oats1.ecn.purdue.edu',
   token: 'insert token here',
 
+  center: [51.505, -0.09],
+  zoom: 13,
+
   // Here is our main points source data: an object with lat, lon,
   // and an "order" to tell us what order they go in
   points: {
@@ -43,7 +46,9 @@ export const state = {
     // but each item is some transformed (or "mapped") version of the original
     // key name.  In our case, we're just going to "map" a key name into a [ lat, lon ] array 
     // representing the point, which is what Leaflet wants.
-    .map(k => [ state.points[k].lat || 0, state.points[k].lon || 0 ]); // the || 0 is to take care of the case where lat or lon is not yet defined
+    .map(k => [ +(state.points[k].lat) || 0, +(state.points[k].lon) || 0 ]) // the || 0 is to take care of the case where lat or lon is not yet defined
+
+    .filter(item => item[0] && item[1]);
   }),
 
 };

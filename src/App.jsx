@@ -9,16 +9,13 @@ export const App = () => {
   const actions = useOvermindActions();
 
   const buttonClicked = function() {
-    actions.incrementCount();
     actions.loadOADAData();
-    console.log('The button was clicked ', state.count, ' times');
   }
 
   return <div>
-    <h1>Hello, I am the app</h1>
+    <h1>Points on a Map</h1>
     <div>
-      The count is {state.count} <br/>
-      <button id="thebutton" onClick={buttonClicked}>I am the button</button>
+      <button id="loadpoints" onClick={buttonClicked}>Load points from {state.domain}</button>
     </div>
 
     <OATSMap />    

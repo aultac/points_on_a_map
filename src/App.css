@@ -1,0 +1,27 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  color: #FFFFFF;
+  width: 100%;
+  height: 50px;
+  font-family: arial;
+  font-size: 12px;
+  background-color: #1111DD;
+  display: flex;
+  flex-direction: row;
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
+
+a.login {
+  color: #FFFFFF;
+  cursor: pointer;
+}
+a.login:visited {
+  color: #FFFFFF;
+}

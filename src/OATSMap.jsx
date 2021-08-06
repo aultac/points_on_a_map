@@ -1,5 +1,6 @@
 import { useOvermindState } from './overmind';
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
+import { getTileAsArray } from './lib/geohash-store'
 
 import { MapCenterer } from './MapCenterer'
 
@@ -9,6 +10,13 @@ export const OATSMap = () => {
 
   const polyline = state.pointsArray;
 
+
+  // val -> { _id, _rev }
+  // key -> dpkjfiek (geohash)
+  const makePolyline = (geohash) => {
+    const positions = getTileAsArray(state.geohashtiles[geohash]._id);
+    return <Polyline key={'geohashpolyline-'+geohash} pathOptions={{ color: 'lime' }} positions={positions} />
+  }
 
   return <div style={{width: '500px', height: '500px' }}>
 
@@ -21,13 +29,8 @@ export const OATSMap = () => {
         attribution="Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
       />
 
-      <Polyline pathOptions={{ color: 'lime' }} positions={polyline} />
+      { Object.keys(state.geohashtiles).map(makePolyline) }
     
-      <Marker position={[51.505, -0.09]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
     </MapContainer>
     
   </div>

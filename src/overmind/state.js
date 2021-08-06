@@ -8,15 +8,16 @@ export const state = {
   domain: 'oats1.ecn.purdue.edu',
   token: 'insert token here',
 
-  center: [51.505, -0.09],
-  zoom: 13,
+  center: [41.528772, -96.303004], // Nebraska
+  zoom: 7,
 
-  // Here is our main points source data: an object with lat, lon,
-  // and an "order" to tell us what order they go in
-  points: {
-    peter: { order: 0, lat: 51.505, lon: -0.09 },
-    james: { order: 1, lat: 51.510, lon: -0.1 },
-    john: { order: 2, lat: 51.515, lon: -0.12 },
+  geohashtiles: {
+    /*
+     * 'dhpkgy': {
+     *   _id: "resources/902jekf20fedw",
+     *   _rev: 4
+     * }
+     */
   },
 
   // Here, pointsArray part of the state is a "derived" function:
@@ -27,6 +28,7 @@ export const state = {
   // "state" into your function whenever it detects that the output of your
   // function might need to be recomputed (i.e. when the parts of the state that
   // it depends on are changed).
+  /*
   pointsArray: derived( function(state) {
 
     if (!state.points) return []; // no points!
@@ -50,5 +52,6 @@ export const state = {
 
     .filter(item => item[0] && item[1]);
   }),
+    */
 
 };

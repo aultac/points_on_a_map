@@ -3,7 +3,7 @@ module.exports = {
   exclude: [ '**/.*.swp' ],
   mount: {
     public: "/",
-    src: "/dist"
+    src: "/"
     /* ... */
   },
   plugins: [
